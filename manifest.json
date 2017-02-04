@@ -1,0 +1,28 @@
+{
+  // required
+  "manifest_version": 2,
+  "name": "OnlineCores Extension",
+  "version": "0.0.0", // Structure.x.x | x.Functions.x | x.x.Add/Change
+
+  // recommended
+  "author": "Mikael Sundstrom",
+  "homepage_url": "https://github.com/OnlineCores/Epoxy/",
+  "description": "An extension that are built for OnlineCores Comminity, it also modifies some websites such as removing ads and more...",
+  "icons": {
+    "16": "images/oc.png",
+    "48": "images/oc.png",
+    "128": "images/oc.png"
+  },
+
+  // loading src files to Web pages that match the domain-rules
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "exclude_matches": ["*://sub.example.org/*"],
+    "css": ["src/styles/stylesheet.css"],
+    "js": ["src/scripts/script.js"]
+  }],
+
+  "storage": {
+    "managed": "src/scripts/data.json"
+  }
+}
