@@ -1,0 +1,12 @@
+div.main-content,
+div.all section#article-main {
+  width: 100%;
+}
+
+.ad-top,
+.ad-right,
+.ad-sidebar,
+.ad-inner,
+.bet-holder {
+  display: none !important;
+}
