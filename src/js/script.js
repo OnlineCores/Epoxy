@@ -75,28 +75,22 @@ var theDomain = parsed_url.domain; //             subdomain.example.com
 var theFirstChar = parsed_url.host.charAt(0); //  e
 
 var pathToLocalCssFile = chrome.extension.getURL("stylesheet.css"); // "chrome-extension://pluginID/stylesheet.css"
-//var pathToExternalCssFile = "https://raw.githubusercontent.com/OnlineCores/Epoxy/master/src/css/" + firstChar + slash + domainID + dot + css;
-//var pathToDomainListFile = "https://raw.githubusercontent.com/OnlineCores/Epoxy/master/src/css/" + theTld + slash + firstChar + slash + "list.txt";
+var pathToExternalCssFile = "https://raw.githubusercontent.com/OnlineCores/Epoxy/master/src/css/" + theTld + slash + theFirstChar + slash + theHost + dot + css;
+var pathToDomainListFile = "https://raw.githubusercontent.com/OnlineCores/Epoxy/master/src/css/" + theTld + slash + theFirstChar + slash + "list.txt";
 
 
-
-function test() {
-  alert(theDomain);
-  alert(theSubdomain);
-  alert(theHost);
-  alert(theTld);
-  alert(thePath);
-  alert(theDomain);
-  alert(theFirstChar);
-  alert(pathToDomainListFile);
-  alert(pathToExternalCssFile);
-  alert(pathToLocalCssFile);
-}
-
-
-
-window.onload = test();
-
+/*
+alert(theDomain);
+alert(theSubdomain);
+alert(theHost);
+alert(theTld);
+alert(thePath);
+alert(theDomain);
+alert(theFirstChar);
+alert(pathToDomainListFile);
+alert(pathToExternalCssFile);
+alert(pathToLocalCssFile);
+*/
 
 
 
