@@ -92,22 +92,7 @@ alert(pathToExternalCssFile);
 alert(pathToLocalCssFile);
 */
 
-
-
-/*
-function checkDomain(domain) {
-  return domain == bar;
-}
-
-function findDomain() {
-  alert(listedDomains.find(checkDomain));
-}
-window.onload = findDomain()
-*/
-
-
-/*var domain_array = lineArr;
-
+readTextFile(pathToDomainListFile);
 
 
 function readTextFile(file) {
@@ -117,7 +102,7 @@ function readTextFile(file) {
     if (rawFile.readyState === 4) {
       if (rawFile.status === 200 || rawFile.status == 0) {
         var allText = rawFile.responseText;
-        alert(allText);
+        intoArray(allText);
       }
     }
   }
@@ -125,22 +110,20 @@ function readTextFile(file) {
 }
 
 function intoArray(lines) {
-  // splitting all text data into array "\n" is splitting data from each new line
-  //and saving each new line as each element*
   var lineArr = lines.split('\n');
-  //just to check if it works output lineArr[index] as below
-  alert(lineArr[1]);
-  alert(lineArr[2]);
+  findDomain(lineArr);
+}
+
+function checkDomain(domain) {
+  return domain == theHost;
+}
+
+function findDomain(listedDomains) {
+  var sss = listedDomains.find(checkDomain);
+  alert(sss);
 }
 
 
-
-
-
-
-
-window.onload = alert(listedDomain);
-*/
 
 
 
