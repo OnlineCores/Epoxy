@@ -12,6 +12,8 @@ var js = "js";
 var currentDomain = document.domain.toString().toLowerCase(); // get the domain name you visiting, with sub if exists
 var currentUrl = document.location.toString().toLowerCase(); // get full url string that you are visiting, including path
 
+
+
 //  ___  _                           _    _ _             _   _          _   _ ___ _
 // |   \(_)___ __ _ ______ ___ _ __ | |__| (_)_ _  __ _  | |_| |_  ___  | | | | _ \ |
 // | |) | (_-</ _` (_-<_-</ -_) '  \| '_ \ | | ' \/ _` | |  _| ' \/ -_) | |_| |   / |__
@@ -59,6 +61,7 @@ function parseURL(url) {
 parseURL(currentUrl); // outputs listed below:
 
 
+
 //   ___                     _           _          __                _      _    _        
 //  / __| ___ __ ___ _ _  __| |  ___ ___| |_   ___ / _| __ ____ _ _ _(_)__ _| |__| |___ ___
 //  \__ \/ -_) _/ _ \ ' \/ _` | (_-</ -_)  _| / _ \  _| \ V / _` | '_| / _` | '_ \ / -_|_-<
@@ -78,20 +81,16 @@ var pathToLocalCssFile = chrome.extension.getURL("stylesheet.css"); // "chrome-e
 var pathToExternalCssFile = "https://raw.githubusercontent.com/OnlineCores/Epoxy/master/src/css/" + theTld + slash + theFirstChar + slash + theHost + dot + css;
 var pathToDomainListFile = "https://raw.githubusercontent.com/OnlineCores/Epoxy/master/src/css/" + theTld + slash + theFirstChar + slash + "list.txt";
 
+var fileExists = LinkCheck(pathToExternalCssFile);
+
 
 /*
-alert(theDomain);
-alert(theSubdomain);
-alert(theHost);
-alert(theTld);
-alert(thePath);
-alert(theDomain);
-alert(theFirstChar);
-alert(pathToDomainListFile);
-alert(pathToExternalCssFile);
-alert(pathToLocalCssFile);
-*/
-
+//   ___     _        _                _        _ _    _
+//  / __|___| |_   __| |___ _ __  __ _(_)_ _   | (_)__| |_
+// | (_ / -_)  _| / _` / _ \ '  \/ _` | | ' \  | | (_-<  _|
+//  \___\___|\__| \__,_\___/_|_|_\__,_|_|_||_| |_|_/__/\__|
+//
+//
 readTextFile(pathToDomainListFile);
 
 
@@ -111,7 +110,11 @@ function readTextFile(file) {
 
 function intoArray(lines) {
   var lineArr = lines.split('\n');
-  findDomain(lineArr);
+  if (lineArr.length > 0) {
+    findDomain(lineArr);
+  } else {
+
+  }
 }
 
 function checkDomain(domain) {
@@ -124,43 +127,58 @@ function findDomain(listedDomains) {
 }
 
 
+*/
 
 
 
-
-
-//     _       _     _                   ___       _           ___                    ___  
-//    / \   __| | __| |   ___ ___ ___   / (_)___  | |_ ___    / / |__   ___  __ _  __| \ \ 
-//   / _ \ / _` |/ _` |  / __/ __/ __| / /| / __| | __/ _ \  / /| '_ \ / _ \/ _` |/ _` |\ \
-//  / ___ \ (_| | (_| | | (__\__ \__ \/ / | \__ \ | || (_) | \ \| | | |  __/ (_| | (_| |/ /
-// /_/   \_\__,_|\__,_|  \___|___/___/_/ _/ |___/  \__\___/   \_\_| |_|\___|\__,_|\__,_/_/ 
-//                                      |__/
+//   ___ _           _     _  __    __ _ _               _    _
+//  / __| |_  ___ __| |__ (_)/ _|  / _(_) |___   _____ _(_)__| |_ ___
+// | (__| ' \/ -_) _| / / | |  _| |  _| | / -_) / -_) \ / (_-<  _(_-<
+//  \___|_||_\___\__|_\_\ |_|_|   |_| |_|_\___| \___/_\_\_/__/\__/__/
 //
-function addElementToHead(filename, filetype) { // call function = addElementToHead("filepath", "css" or "js")
+//
+function LinkCheck(url) {
+  var http = new XMLHttpRequest();
+  http.open('HEAD', url, false);
+  http.send();
+  return http.status != 404;
+}
+
+if (fileExists == true) {
+  addElementToHead(pathToExternalCssFile, css);
+}
+
+
+
+//    _      _    _              ___      _          ___                ___
+//   /_\  __| |__| |  __ ______ / (_)___ | |_ ___   / / |_  ___ __ _ __| \ \
+//  / _ \/ _` / _` | / _(_-<_-</ /| (_-< |  _/ _ \ < <| ' \/ -_) _` / _` |> >
+// /_/ \_\__,_\__,_| \__/__/__/_/_/ /__/  \__\___/  \_\_||_\___\__,_\__,_/_/
+//                              |__/
+//
+function addElementToHead(filepath, filetype) {
   if (filetype == js) {
     var fileref = document.createElement('script')
     fileref.setAttribute("type", "text/javascript")
-    fileref.setAttribute("src", filename)
+    fileref.setAttribute("src", filepath)
     alert('called');
   } else if (filetype == css) {
     var fileref = document.createElement("link")
     fileref.setAttribute("rel", "stylesheet")
     fileref.setAttribute("type", "text/css")
-    fileref.setAttribute("href", filename)
+    fileref.setAttribute("href", filepath)
   }
   if (typeof fileref != "undefined")
     document.getElementsByTagName("head")[0].appendChild(fileref)
 }
 
 
-
-
-//  ____                _                       _  __ _         ____ ____ ____  
-// |  _ \ ___  __ _  __| |  ___ _ __   ___  ___(_)/ _(_) ___   / ___/ ___/ ___| 
-// | |_) / _ \/ _` |/ _` | / __| '_ \ / _ \/ __| | |_| |/ __| | |   \___ \___ \ 
-// |  _ <  __/ (_| | (_| | \__ \ |_) |  __/ (__| |  _| | (__  | |___ ___) |__) |
-// |_| \_\___|\__,_|\__,_| |___/ .__/ \___|\___|_|_| |_|\___|  \____|____/____/ 
-//                             |_|
+/*
+//  ___             _                   _  __ _       ___ ___ ___
+// | _ \___ __ _ __| |  ____ __  ___ __(_)/ _(_)__   / __/ __/ __|
+// |   / -_) _` / _` | (_-< '_ \/ -_) _| |  _| / _| | (__\__ \__ \
+// |_|_\___\__,_\__,_| /__/ .__/\___\__|_|_| |_\__|  \___|___/___/
+//                        |_|
 //
 // if current top domain is in the list, then run css document that match that domain
 if (domainID == "google.se") {
@@ -171,4 +189,4 @@ if (domainID == "google.se") {
   addElementToHead(pathToGeneralCssFile, css)
   //alert("else");
 
-}
+}*/
