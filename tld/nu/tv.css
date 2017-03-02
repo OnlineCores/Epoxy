@@ -1,7 +1,10 @@
+.ad-area,
 .ad-sidebar,
 .ad-wrapper,
 .ad--panorama,
-.js-ad-container {
+.js-ad-container,
+.breakout-bottom--tiny.lap-and-up-breakout-top--medium.lap-and-up-indent-bottom--auto.one-whole,
+.palm-switchable__bottom.js-home-blog.indent-top--medium.indent-bottom {
     display: none;
 }
 .page {
