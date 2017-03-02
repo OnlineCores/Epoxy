@@ -1,6 +1,9 @@
 .ad-sidebar,
 .ad-wrapper,
 .ad--panorama,
-.js-ad-container{
+.js-ad-container {
     display: none;
+}
+.page {
+    max-width: 100%;
 }
