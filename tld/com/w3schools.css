@@ -1,3 +1,11 @@
 div#tryitLeaderboard {
   display: none !important;
 }
+
+.trytopnav {
+  top: 0px !important;
+}
+
+div#container.horizontal {
+  top: 40px !important;
+}
