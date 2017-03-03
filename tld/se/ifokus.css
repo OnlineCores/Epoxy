@@ -1,5 +1,7 @@
+a.site-banner,
 .ad-strip,
 iframe[data-placement="after-post"],
+iframe[data-placement="random-comment"],
 #sidebar iframe,
 label.ad {
   display: none !important;
