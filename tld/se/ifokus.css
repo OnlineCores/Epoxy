@@ -1,0 +1,6 @@
+.ad-strip,
+iframe[data-placement="after-post"],
+#sidebar iframe,
+label.ad {
+  display: none !important;
+}
