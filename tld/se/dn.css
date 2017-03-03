@@ -1,5 +1,7 @@
 .ad,
-.js-ad-sidebar {
+.ad-header,
+.js-ad-sidebar,
+.DNP_module {
   display: none !important;
 }
 
