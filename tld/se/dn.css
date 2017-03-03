@@ -6,3 +6,13 @@
 .js-main-ad-container {
   padding-right: 0px !important;
 }
+
+article.article {
+  padding-right: 120px !important;
+}
+
+.article__body,
+aside.article-toolbar,
+.article__body-content {
+  max-width: 100% !important;
+}
