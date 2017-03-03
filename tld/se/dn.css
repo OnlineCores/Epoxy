@@ -11,6 +11,10 @@ article.article {
   padding-right: 120px !important;
 }
 
+header.article__head.js-article-header {
+  padding: 0 30px !important;
+}
+
 .article__body,
 aside.article-toolbar,
 .article__body-content {
