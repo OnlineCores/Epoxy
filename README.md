@@ -1,3 +1,5 @@
+# Documentation
+Link to beta version on [chrome webstore](https://chrome.google.com/webstore/detail/epoxybeta/ikhfdnipdkbahkimjecmnmgamifplkho?hl=sv), only open for sweden at the moment.
 ## Font icons
 ### How to use:
 ``` html
