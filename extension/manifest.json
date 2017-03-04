@@ -1,0 +1,59 @@
+{
+  // required
+  "manifest_version": 2,
+  "name": "Epoxy",
+  "version": "1.0",
+  // recommended
+  "author": "Mikael Sundstrom",
+  "homepage_url": "http://docs.onlinecores.com/Epoxy/",
+  "description": "An extension that are built for OnlineCores Comminity, it also modifies some websites such as removing ads and more...",
+  "icons": {
+    "16": "src/img/icon.png",
+    "48": "src/img/icon.png",
+    "128": "src/img/icon.png"
+  },
+  //https://developer.chrome.com/extensions/activeTab
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "options.html",
+    "popup.html",
+    "src/js/ace.js",
+    "src/js/background.js",
+    "src/js/data.json",
+    "src/js/ext-language_tools.js",
+    "src/js/jquery.js",
+    "src/js/mode-css.js",
+    "src/js/options.js",
+    "src/js/popup.js",
+    "src/js/script.js",
+    "src/js/settings.json",
+    "src/js/theme-epoxy.js",
+    "src/js/toggle-chrome.js",
+    "src/js/worker-css.js",
+    "src/font/Consolas.ttf"
+  ],
+  // loading src files to Web pages that match the domain-rules
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    //"exclude_matches": ["*://sub.example.org/*"],
+    "css": ["src/css/stylesheet.css"],
+    "js": ["src/js/script.js"]
+  }],
+  "background": {
+    "persistent": false,
+    "scripts": ["src/js/background.js"]
+  },
+  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": "src/img/icon.png",
+    "default_popup": "popup.html"
+  },
+  "storage": {
+    "managed": "src/js/data.json"
+  }
+}

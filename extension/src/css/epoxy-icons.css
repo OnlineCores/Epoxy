@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'epoxy';
+  src: url('../font/epoxy.ttf?qy5kse') format('truetype'), url('../font/epoxy.woff?qy5kse') format('woff'), url('../font/epoxy.svg?qy5kse#epoxy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i,
+.icomoon-liga {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'epoxy' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.epoxy_power:before {
+  content: "\e001";
+}
+
+.epoxy_block:before {
+  content: "\e002";
+}
+
+.epoxy_edit:before {
+  content: "\e003";
+}
+
+.epoxy_save:before {
+  content: "\e004";
+}
+
+.epoxy_settings:before {
+  content: "\e005";
+}
+
+.epoxy_download:before {
+  content: "\e006";
+}
+
+.epoxy_upload:before {
+  content: "\e007";
+}
+
+.epoxy_fullscreen:before {
+  content: "\e008";
+}
+
+.epoxy_frame:before {
+  content: "\e009";
+}
+
+.epoxy_starempty:before {
+  content: "\e010";
+}
+
+.epoxy_starhalf:before {
+  content: "\e011";
+}
+
+.epoxy_starfull:before {
+  content: "\e012";
+}
+
+.epoxy_code:before {
+  content: "\e013";
+}
+
+.epoxy_newtab:before {
+  content: "\e014";
+}
+
+.epoxy_github:before {
+  content: "\e015";
+}
+
+.epoxy_chrome:before {
+  content: "\e016";
+}
+
+.epoxy_firefox:before {
+  content: "\e017";
+}
