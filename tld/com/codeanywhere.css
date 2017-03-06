@@ -8,9 +8,15 @@
 }
 
 .multisplit-tabs-wrapper-bg,
-.gtree .sticky-node {
+.multisplit-tabs-wrapper.smoothtabs-wrapper {
   background-color: #3d3d3d !important;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAQAAAAHUWYVAABFFUlEQ…ga9bnBq3fEVltKfO5IaSTmGjjc4J0otcP7QsJUSQM8pEj5/wCuUuC2DWz8AAAAAElFTkSuQmCC);
   padding-left: 41px !important;
+  border-bottom: 1px solid #4d4d4d !important;
+}
+
+.gtree .sticky-node {
+  background: #111;
 }
 
 .multisplit .ms-panel .smoothtabs-tab,
