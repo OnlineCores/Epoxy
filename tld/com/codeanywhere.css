@@ -1,0 +1,19 @@
+.region-west {
+  background-color: #111;
+}
+
+.region-north,
+.hmenu.sm.sm-simple {
+  background-color: #090909;
+}
+
+.multisplit-tabs-wrapper-bg,
+.gtree .sticky-node {
+  background-color: #3d3d3d;
+  padding-left: 41px;
+}
+
+.multisplit .ms-panel .smoothtabs-tab,
+.smoothtabs-clone {
+  background-color: transparent;
+}
